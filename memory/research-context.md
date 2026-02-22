@@ -1,6 +1,6 @@
 # Research Context — Siyuan
 
-**Last Updated:** 2026-02-22
+**Last Updated:** 2026-02-22 (session 2)
 
 Persistent knowledge base across sessions. Update after each significant session.
 Claude reads this to restore context without you having to re-explain.
@@ -145,6 +145,28 @@ STEM Outcomes (motivation / achievement / persistence)
 | No mechanism | + EVT as mediating mechanism |
 | grade/region as moderators | + STEM cost structure as theoretical moderator |
 
+### Positioning vs. Existing Reviews
+
+| 维度 | Trautner (2025) EGM | 你的 COMPS |
+|------|---------------------|-----------|
+| 语境 | 通用学习（general） | **STEM specifically** |
+| 因变量 | 成绩、努力 | + STEM persistence & educational choices |
+| 理论框架 | 描述性分类 | EVT 作为组织框架（expectancy/value/cost） |
+| 元动机 | 无 | Metamotivation 解释 MR 效果异质性 |
+| 测量 | 仅描述 operationalization | 系统 validity evidence audit（RQ2） |
+| 谁受益 | 平均效应 | Person-centered 视角 |
+| 方法 | EGM（文献地图） | 概念性综述 + 系统叙述综合 |
+
+**创新点总结（6条）：**
+1. STEM 语境专注——Trautner 证明空白存在，COMPS 填补
+2. EVT 作为理论组织框架——没有人用此系统梳理 MR 策略机制
+3. Cost regulation 空白——18 个策略无一正式针对 cost（EVT-derived gap）
+4. Persistence & choices 作为 DV——STEM pipeline 核心关切
+5. Measurement validity audit——STEM 可用测量工具的效度证据审查
+6. Metamotivation 整合——解释"为何同样策略对不同人效果不同"
+
+---
+
 ### Key Gaps (6 identified)
 1. **Domain specificity** — MR frameworks are domain-general; STEM cost structure unintegrated
 2. **Metamotivational knowledge in STEM** — never tested in EVT-domain or STEM context (Teo 2025 = first real-world study, construal level only)
@@ -164,6 +186,9 @@ STEM Outcomes (motivation / achievement / persistence)
 
 **Landmark for positioning:**
 - Trautner, Grunschel & Schwinger (2025) — EGM scoping review N=289 *(Ed Psych Review)* — COMPS builds on this
+  - **Key stat to cite in intro:** 289 studies total, but science/math only ~20 → empirical justification for STEM gap
+  - **What Trautner does NOT do:** no EVT framework, no metamotivation layer, no persistence/choices DV, no validity audit, no "who benefits"
+  - **Rhetorical role:** Trautner is your launching pad, not your competitor. It proves the gap; you fill it.
 
 **Supporting (read method sections):**
 - Kim, Beymer et al. (2026) — intensive longitudinal, calculus
