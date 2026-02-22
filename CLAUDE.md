@@ -1,72 +1,55 @@
-# CLAUDE.MD -- Academic Project Development with Claude Code
+# CLAUDE.md — Educational Psychology Research Assistant
 
-<!-- HOW TO USE: Replace [BRACKETED PLACEHOLDERS] with your project info.
-     Customize Beamer environments and CSS classes for your theme.
-     Keep this file under ~150 lines — Claude loads it every session.
-     See the guide at docs/workflow-guide.html for full documentation. -->
-
-**Project:** [YOUR PROJECT NAME]
-**Institution:** [YOUR INSTITUTION]
+**Researcher:** Siyuan
+**Program:** Educational Psychology PhD
 **Branch:** main
+
+---
+
+## Research Profile
+
+**Focus Areas:** Academic motivation, motivation beliefs, motivation regulation,
+meta-motivation, STEM education (achievement, educational choices)
+
+**Methods:**
+- Mplus — SEM, CFA, LPA/LCA, longitudinal models (growth curve, CLPM)
+- SPSS — descriptive statistics, reliability analysis, scale scoring
+- R — meta-analysis, data wrangling, visualization
+
+**Writing:** Microsoft Word (.docx)
 
 ---
 
 ## Core Principles
 
-- **Plan first** -- enter plan mode before non-trivial tasks; save plans to `quality_reports/plans/`
-- **Verify after** -- compile/render and confirm output at the end of every task
-- **Single source of truth** -- Beamer `.tex` is authoritative; Quarto `.qmd` derives from it
-- **Quality gates** -- nothing ships below 80/100
-- **[LEARN] tags** -- when corrected, save `[LEARN:category] wrong → right` to MEMORY.md
+- **Plan first** — enter plan mode for non-trivial tasks; save to `quality_reports/plans/`
+- **Remember context** — save theory names, variable definitions, advisor feedback
+  to `memory/research-context.md` after each session
+- **Don't fabricate citations** — flag uncertain references for user to verify
+- **[LEARN] tags** — when corrected, save `[LEARN:category] wrong → right` to MEMORY.md
 
 ---
 
 ## Folder Structure
 
 ```
-[YOUR-PROJECT]/
-├── CLAUDE.MD                    # This file
-├── .claude/                     # Rules, skills, agents, hooks
-├── Bibliography_base.bib        # Centralized bibliography
-├── Figures/                     # Figures and images
-├── Preambles/header.tex         # LaTeX headers
-├── Slides/                      # Beamer .tex files
-├── Quarto/                      # RevealJS .qmd files + theme
-├── docs/                        # GitHub Pages (auto-generated)
-├── scripts/                     # Utility scripts + R code
-├── quality_reports/             # Plans, session logs, merge reports
-├── explorations/                # Research sandbox (see rules)
-├── templates/                   # Session log, quality report templates
-└── master_supporting_docs/      # Papers and existing slides
+my-project/
+├── CLAUDE.md
+├── .claude/               # Rules, skills, hooks
+├── literature/            # PDF papers for reading
+│   └── notes/             # Reading notes (.md files)
+├── data/                  # Raw and processed datasets
+├── scripts/
+│   ├── R/                 # R scripts (.R)
+│   └── Mplus/             # Mplus files (.inp, .out)
+├── writing/               # Manuscripts, proposals
+│   └── COMPS/             # Comprehensive exam materials
+├── quality_reports/       # Plans, session logs, lit reviews
+│   ├── plans/
+│   ├── session_logs/
+│   └── lit_reviews/
+└── memory/                # Cross-session knowledge base
 ```
-
----
-
-## Commands
-
-```bash
-# LaTeX (3-pass, XeLaTeX only)
-cd Slides && TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
-BIBINPUTS=..:$BIBINPUTS bibtex file
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
-
-# Deploy Quarto to GitHub Pages
-./scripts/sync_to_docs.sh LectureN
-
-# Quality score
-python scripts/quality_score.py Quarto/file.qmd
-```
-
----
-
-## Quality Thresholds
-
-| Score | Gate | Meaning |
-|-------|------|---------|
-| 80 | Commit | Good enough to save |
-| 90 | PR | Ready for deployment |
-| 95 | Excellence | Aspirational |
 
 ---
 
@@ -74,60 +57,31 @@ python scripts/quality_score.py Quarto/file.qmd
 
 | Command | What It Does |
 |---------|-------------|
-| `/compile-latex [file]` | 3-pass XeLaTeX + bibtex |
-| `/deploy [LectureN]` | Render Quarto + sync to docs/ |
-| `/extract-tikz [LectureN]` | TikZ → PDF → SVG |
-| `/proofread [file]` | Grammar/typo/overflow review |
-| `/visual-audit [file]` | Slide layout audit |
-| `/pedagogy-review [file]` | Narrative, notation, pacing review |
-| `/review-r [file]` | R code quality review |
-| `/qa-quarto [LectureN]` | Adversarial Quarto vs Beamer QA |
-| `/slide-excellence [file]` | Combined multi-agent review |
-| `/translate-to-quarto [file]` | Beamer → Quarto translation |
-| `/validate-bib` | Cross-reference citations |
-| `/devils-advocate` | Challenge slide design |
-| `/create-lecture` | Full lecture creation |
-| `/commit [msg]` | Stage, commit, PR, merge |
-| `/lit-review [topic]` | Literature search + synthesis |
-| `/research-ideation [topic]` | Research questions + strategies |
-| `/interview-me [topic]` | Interactive research interview |
-| `/review-paper [file]` | Manuscript review |
-| `/data-analysis [dataset]` | End-to-end R analysis |
+| `/lit-review [topic]` | Structured literature search + synthesis |
+| `/research-ideation [topic]` | COMPS topics, research questions, framing |
+| `/interview-me [topic]` | Interactive research planning dialogue |
+| `/review-paper [file]` | Academic manuscript critical review |
+| `/review-r [file]` | R code quality check |
+| `/data-analysis [goal]` | R/Mplus analysis workflow |
+| `/learn` | Extract session learnings to persistent memory |
+| `/context-status` | Check session context health |
 
 ---
 
-<!-- CUSTOMIZE: Replace the example entries below with your own
-     Beamer environments and Quarto CSS classes. These are examples
-     from the original project — delete them and add yours. -->
+## Research Memory
 
-## Beamer Custom Environments
+Full detail in `memory/research-context.md`. Summary below — update each session:
 
-| Environment       | Effect        | Use Case       |
-|-------------------|---------------|----------------|
-| `[your-env]`      | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `keybox` | Gold background box | Key points |
-| `highlightbox` | Gold left-accent box | Highlights |
-| `definitionbox[Title]` | Blue-bordered titled box | Formal definitions |
--->
-
-## Quarto CSS Classes
-
-| Class              | Effect        | Use Case       |
-|--------------------|---------------|----------------|
-| `[.your-class]`    | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `.smaller` | 85% font | Dense content slides |
-| `.positive` | Green bold | Good annotations |
--->
+**Theoretical Frameworks:** [e.g., EVT, SDT, Control-Value Theory]
+**Key Constructs & Variables:** [Fill in as you work]
+**Active Projects:** COMPS (topic exploration)
+**Advisor Preferences:** [Fill in]
+**COMPS Status:** Topic exploration
 
 ---
 
-## Current Project State
+## Current Projects
 
-| Lecture | Beamer | Quarto | Key Content |
-|---------|--------|--------|-------------|
-| 1: [Topic] | `Lecture01_Topic.tex` | `Lecture1_Topic.qmd` | [Brief description] |
-| 2: [Topic] | `Lecture02_Topic.tex` | -- | [Brief description] |
+| Project | Location | Status |
+|---------|----------|--------|
+| COMPS | `writing/COMPS/` | Topic exploration |

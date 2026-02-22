@@ -70,3 +70,28 @@ When a mistake is corrected, append a `[LEARN:category]` entry below.
 [LEARN:meta] Dogfooding principles must be enforced: plan-first, spec-then-plan, quality gates, session logs → we follow our own guide.
 
 [LEARN:meta] Template development work (building infrastructure, docs) doesn't create session logs in quality_reports/ → those are for user work (slides, analysis), not meta-work. Keeps template clean for users who fork.
+
+---
+
+## Session Start Protocol
+
+At the start of EVERY session in this project:
+1. Read `memory/research-context.md` — restore research context (theories, variables, advisor feedback, COMPS status)
+2. Ask: "你今天想做什么？" or read the most recent plan in `quality_reports/plans/`
+3. Do NOT assume slide/LaTeX/Quarto work — this is a pure research + writing + analysis project
+
+---
+
+## This Project: Siyuan's Ed Psych Research Setup
+
+[LEARN:setup] Siyuan is an Ed Psych PhD student — NO LaTeX, NO Beamer, NO Quarto, NO slides of any kind. Word (.docx) for writing.
+
+[LEARN:setup] Methods: Mplus (SEM/CFA/LPA/longitudinal), SPSS (descriptive/reliability), R (meta-analysis/visualization). Help writing .inp files is expected.
+
+[LEARN:setup] Key file locations: `memory/research-context.md` (research KB), `literature/` (papers), `scripts/R/` + `scripts/Mplus/` (analysis), `writing/COMPS/` (comprehensive exams).
+
+[LEARN:workflow] Always read `memory/research-context.md` at session start to restore advisor feedback, variable definitions, and active project context.
+
+[LEARN:comps] McGill Ed Psych COMPS = 2 questions × ~25 pages each (≤50 total, double-spaced, excl. refs). 4 months to write. Cannot discuss with anyone during writing. Rubric: Rationale, Theoretical Synthesis, Critique of Theory, Synthesis of Empirical, Critique of Methods, Communication, APA. All must be ≥ Satisfactory; one Unsatisfactory from any committee member = FAIL.
+
+[LEARN:comps-topic] COMPS topic confirmed: "Motivational Regulation in STEM" — RQ1=theory/construct/correlates, RQ2=measurement validity. Core argument: MR's effectiveness in STEM is unknown due to construct confusion + measurement gaps. EVT-Metamotivation integrated framework. Full notes: writing/COMPS/MR_working_notes_Feb22.md

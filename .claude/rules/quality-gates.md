@@ -1,67 +1,60 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
-  - "scripts/**/*.R"
+  - "scripts/R/**"
+  - "scripts/Mplus/**"
+  - "writing/**"
 ---
 
 # Quality Gates & Scoring Rubrics
 
 ## Thresholds
 
-- **80/100 = Commit** -- good enough to save
-- **90/100 = PR** -- ready for deployment
-- **95/100 = Excellence** -- aspirational
-
-## Quarto Slides (.qmd)
-
-| Severity | Issue | Deduction |
-|----------|-------|-----------|
-| Critical | Compilation failure | -100 |
-| Critical | Equation overflow | -20 |
-| Critical | Broken citation | -15 |
-| Critical | Typo in equation | -10 |
-| Major | Text overflow | -5 |
-| Major | TikZ label overlap | -5 |
-| Major | Notation inconsistency | -3 |
-| Minor | Font size reduction | -1 per slide |
-| Minor | Long lines (>100 chars) | -1 (EXCEPT documented math formulas) |
+- **80/100 = Save** — good enough to commit
+- **90/100 = Share** — ready to show advisor or submit
+- **95/100 = Excellence** — aspirational
 
 ## R Scripts (.R)
 
 | Severity | Issue | Deduction |
 |----------|-------|-----------|
-| Critical | Syntax errors | -100 |
-| Critical | Domain-specific bugs | -30 |
+| Critical | Syntax errors / won't run | -100 |
+| Critical | Wrong reverse coding | -30 |
 | Critical | Hardcoded absolute paths | -20 |
-| Major | Missing set.seed() | -10 |
-| Major | Missing figure generation | -5 |
+| Major | Missing `set.seed()` | -10 |
+| Major | Packages not loaded at top | -10 |
+| Major | Missing data handling undocumented | -5 |
+| Minor | Long lines (>100 chars, non-formula) | -1 per line |
 
-## Beamer Slides (.tex)
+## Mplus Files (.inp)
 
 | Severity | Issue | Deduction |
 |----------|-------|-----------|
-| Critical | XeLaTeX compilation failure | -100 |
-| Critical | Undefined citation | -15 |
-| Critical | Overfull hbox > 10pt | -10 |
+| Critical | Model won't run / syntax error | -100 |
+| Critical | Wrong estimator for data type | -20 |
+| Critical | CATEGORICAL not declared for ordinal items | -15 |
+| Major | Missing STANDARDIZED in OUTPUT | -5 |
+| Major | Missing fit indices reported | -5 |
+| Minor | Non-descriptive file name | -2 |
+
+## Academic Writing (manuscripts, COMPS, proposals)
+
+| Severity | Issue | Deduction |
+|----------|-------|-----------|
+| Critical | Fabricated or unverifiable citations | -30 |
+| Critical | Claims not supported by cited evidence | -20 |
+| Major | Undefined constructs or abbreviations | -10 |
+| Major | Inconsistent terminology across sections | -5 |
+| Major | Missing limitations section | -5 |
+| Minor | Grammar / typo / APA formatting errors | -2 each |
 
 ## Enforcement
 
-- **Score < 80:** Block commit. List blocking issues.
-- **Score < 90:** Allow commit, warn. List recommendations.
+- **Score < 80:** Flag blocking issues before proceeding.
+- **Score < 90:** Allow but note recommendations.
 - User can override with justification.
 
 ## Quality Reports
 
-Generated **only at merge time**. Use `templates/quality-report.md` for format.
-Save to `quality_reports/merges/YYYY-MM-DD_[branch-name].md`.
-
-## Tolerance Thresholds (Research)
-
-<!-- Customize for your domain -->
-
-| Quantity | Tolerance | Rationale |
-|----------|-----------|-----------|
-| Point estimates | [e.g., 1e-6] | [Numerical precision] |
-| Standard errors | [e.g., 1e-4] | [MC variability] |
-| Coverage rates | [e.g., +/- 0.01] | [MC with B reps] |
+Generated at significant milestones (COMPS submission, paper submission, analysis completion).
+Use `templates/quality-report.md` if available.
+Save to `quality_reports/`.

@@ -1,132 +1,145 @@
 ---
 name: data-analysis
-description: End-to-end R data analysis workflow from exploration through regression to publication-ready tables and figures
+description: End-to-end quantitative analysis workflow — R data preparation and visualization, Mplus model specification, and results interpretation
 disable-model-invocation: true
-argument-hint: "[dataset path or description of analysis goal]"
+argument-hint: "[dataset path or description of analysis goal, e.g., 'LPA on motivation scales using data/survey.csv']"
 allowed-tools: ["Read", "Grep", "Glob", "Write", "Edit", "Bash", "Task"]
 ---
 
 # Data Analysis Workflow
 
-Run an end-to-end data analysis in R: load, explore, analyze, and produce publication-ready output.
+Run a quantitative analysis: data preparation in R, model specification in Mplus (if SEM/LPA/longitudinal), and interpretation of results.
 
-**Input:** `$ARGUMENTS` — a dataset path (e.g., `data/county_panel.csv`) or a description of the analysis goal (e.g., "regress wages on education with state fixed effects using CPS data").
+**Input:** `$ARGUMENTS` — a dataset path and/or a description of the analysis goal.
 
 ---
 
 ## Constraints
 
-- **Follow R code conventions** in `.claude/rules/r-code-conventions.md`
-- **Save all scripts** to `scripts/R/` with descriptive names
-- **Save all outputs** (figures, tables, RDS) to `output/`
-- **Use `saveRDS()`** for every computed object — Quarto slides may need them
-- **Use project theme** for all figures (check for custom theme in `.claude/rules/`)
-- **Run r-reviewer** on the generated script before presenting results
+- **Follow R conventions** in `.claude/rules/r-code-conventions.md`
+- **Follow Mplus conventions** in `.claude/rules/mplus-conventions.md`
+- **Save all R scripts** to `scripts/R/` with descriptive names
+- **Save all Mplus .inp files** to `scripts/Mplus/`
+- **Save outputs** (figures, tables, RDS) to `data/processed/` or `output/`
+- **Run review-r agent** on generated R scripts before presenting results
 
 ---
 
 ## Workflow Phases
 
-### Phase 1: Setup and Data Loading
+### Phase 1: Data Preparation (R)
 
-1. Read `.claude/rules/r-code-conventions.md` for project standards
-2. Create R script with proper header (title, author, purpose, inputs, outputs)
-3. Load required packages at top (`library()`, never `require()`)
-4. Set seed once at top: `set.seed(42)`
-5. Load and inspect the dataset
+1. Read `.claude/rules/r-code-conventions.md`
+2. Create R script with header (title, author, purpose, inputs, outputs)
+3. Load packages at top (`library()`, never `require()`)
+4. Set seed: `set.seed(YYYYMMDD)`
+5. Load data and inspect:
+   - Variable names, types, distributions
+   - Missing data rates (flag if > 5% on key variables)
+   - Reverse-coded items (handle before computing composites)
+6. Compute scale scores / composites (after checking reliability)
+7. Export cleaned dataset as `.csv` and `.dat` (for Mplus)
 
-### Phase 2: Exploratory Data Analysis
+```r
+# Export for Mplus (no variable names, no quotes, missing = 999)
+write.table(df_clean, "data/processed/data_for_mplus.dat",
+            row.names = FALSE, col.names = FALSE,
+            na = "999", sep = " ")
+```
 
-Generate diagnostic outputs:
-- **Summary statistics:** `summary()`, missingness rates, variable types
-- **Distributions:** Histograms for key continuous variables
-- **Relationships:** Scatter plots, correlation matrices
-- **Time patterns:** If panel data, plot trends over time
-- **Group comparisons:** If treatment/control, compare pre-treatment means
+### Phase 2: Descriptive Analysis (R or SPSS)
 
-Save all diagnostic figures to `output/diagnostics/`.
+Generate:
+- **Summary statistics:** M, SD, min, max, skewness, kurtosis
+- **Reliability:** Cronbach's α (or McDonald's ω) per scale
+- **Correlations:** correlation matrix with significance
+- **Distributions:** histograms or density plots for key variables
+- **Group comparisons:** if relevant (gender, grade level, school type)
 
 ### Phase 3: Main Analysis
 
-Based on the research question:
-- **Regression analysis:** Use `fixest` for panel data, `lm`/`glm` for cross-section
-- **Standard errors:** Cluster at the appropriate level (document why)
-- **Multiple specifications:** Start simple, progressively add controls
-- **Effect sizes:** Report standardized effects alongside raw coefficients
+#### For SEM / CFA (Mplus)
+1. Read `.claude/rules/mplus-conventions.md`
+2. First run a measurement model (CFA) — check fit before structural model
+3. Write `.inp` file following the template in conventions
+4. Check fit indices: CFI, TLI, RMSEA (90% CI), SRMR
+5. If poor fit: examine modification indices (MODINDICES(10) in OUTPUT)
+6. Run structural model once measurement model is acceptable
 
-### Phase 4: Publication-Ready Output
+#### For LPA / LCA (Mplus)
+1. Run k = 1 through 5 (or 6) class solutions
+2. Compare BIC, aBIC, LMR-LRT (TECH11), BLRT (TECH14), entropy
+3. Examine profile interpretability — do profiles make theoretical sense?
+4. Save final classification: `SAVE = CPROBABILITIES;`
+5. Bring class assignments back into R for further analyses
 
-**Tables:**
-- Use `modelsummary` for regression tables (preferred) or `stargazer`
-- Include all standard elements: coefficients, SEs, significance stars, N, R-squared
-- Export as `.tex` for LaTeX inclusion and `.html` for quick viewing
+#### For Meta-Analysis (R)
+- Use `metafor` package
+- Compute or convert effect sizes (r, d, g) as needed
+- Report heterogeneity (I², τ²) and moderator analyses if planned
 
-**Figures:**
-- Use `ggplot2` with project theme
-- Set `bg = "transparent"` for Beamer compatibility
-- Include proper axis labels (sentence case, units)
-- Export with explicit dimensions: `ggsave(width = X, height = Y)`
+#### For Longitudinal Models (Mplus)
+- Growth curve: specify time scores carefully (fix intercept @0)
+- CLPM: document autoregressive and cross-lagged paths explicitly
+- Test measurement invariance across time before comparing means
+
+### Phase 4: Results Preparation
+
+**Tables (R):**
+- Use `flextable` or `knitr::kable` for Word-compatible tables
+- Include: M, SD, reliability, correlations OR regression coefficients, SE, p, CI, effect size
+- Export as `.docx` using `officer` package, or as `.csv` for manual formatting in Word
+
+**Figures (R):**
+- Use `ggplot2` with `theme_research()` from conventions
+- Explicit dimensions: `ggsave(width = 6.5, height = 4, dpi = 300)`
 - Save as both `.pdf` and `.png`
 
 ### Phase 5: Save and Review
 
-1. `saveRDS()` for all key objects (regression results, summary tables, processed data)
-2. Create `output/` subdirectories as needed with `dir.create(..., recursive = TRUE)`
-3. Run the r-reviewer agent on the generated script:
-
-```
-Delegate to the r-reviewer agent:
-"Review the script at scripts/R/[script_name].R"
-```
-
-4. Address any Critical or High issues from the review.
+1. `saveRDS()` for all key R objects
+2. Run the r-reviewer agent: "Review the script at `scripts/R/[script_name].R`"
+3. Address any Critical or Major issues
 
 ---
 
-## Script Structure
-
-Follow this template:
+## Script Structure (R)
 
 ```r
 # ============================================================
 # [Descriptive Title]
-# Author: [from project context]
+# Author: Siyuan
 # Purpose: [What this script does]
-# Inputs: [Data files]
-# Outputs: [Figures, tables, RDS files]
+# Inputs:  [Data files]
+# Outputs: [Tables, figures, RDS files]
 # ============================================================
 
 # 0. Setup ----
 library(tidyverse)
-library(fixest)
-library(modelsummary)
+library(psych)       # reliability, descriptives
+library(flextable)   # Word-compatible tables
 
-set.seed(42)
+set.seed(20240901)
 
-dir.create("output/analysis", recursive = TRUE, showWarnings = FALSE)
+dir.create("output", recursive = TRUE, showWarnings = FALSE)
 
 # 1. Data Loading ----
-# [Load and clean data]
 
-# 2. Exploratory Analysis ----
-# [Summary stats, diagnostic plots]
+# 2. Data Cleaning & Scoring ----
 
-# 3. Main Analysis ----
-# [Regressions, estimation]
+# 3. Descriptive Analysis ----
 
-# 4. Tables and Figures ----
-# [Publication-ready output]
+# 4. Main Analysis ----
 
 # 5. Export ----
-# [saveRDS for all objects, ggsave for all figures]
 ```
 
 ---
 
 ## Important
 
-- **Reproduce, don't guess.** If the user specifies a regression, run exactly that.
-- **Show your work.** Print summary statistics before jumping to regression.
-- **Check for issues.** Look for multicollinearity, outliers, perfect prediction.
-- **Use relative paths.** All paths relative to repository root.
-- **No hardcoded values.** Use variables for sample restrictions, date ranges, etc.
+- **Check reverse coding first** — wrong direction invalidates all subsequent analyses.
+- **Show descriptives before models** — never jump straight to SEM.
+- **Report effect sizes** alongside significance tests.
+- **Document missing data strategy** — note whether FIML (Mplus), multiple imputation, or listwise was used and why.
+- **Use relative paths** — all paths relative to repo root.

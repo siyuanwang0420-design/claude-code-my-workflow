@@ -1,47 +1,52 @@
 ---
 paths:
-  - "Slides/**/*.tex"
-  - "Quarto/**/*.qmd"
+  - "writing/**"
   - "quality_reports/**"
 ---
 
-# Proofreading Agent Protocol (MANDATORY)
+# Proofreading Protocol
 
-**Every lecture file MUST be reviewed before any commit or PR.**
+**CRITICAL RULE: Never apply changes directly. Propose all changes first; only apply after explicit user approval.**
 
-**CRITICAL RULE: The agent must NEVER apply changes directly. It proposes all changes for review first.**
+## What to Check
 
-## What the Agent Checks
-
-1. **Grammar** -- subject-verb agreement, missing articles, wrong prepositions
-2. **Typos** -- misspellings, search-and-replace corruption, duplicated words
-3. **Overflow** -- overfull hbox (Beamer), content exceeding slide boundaries (Quarto)
-4. **Consistency** -- notation, citation style (`\citet` vs `\citep`, `[@key]`), terminology
-5. **Academic quality** -- informal abbreviations, missing words, awkward phrasing
+1. **Grammar** — subject-verb agreement, article usage, prepositions
+2. **Typos** — misspellings, duplicated words, autocorrect errors
+3. **APA Style** — citation format, heading levels, numbers, abbreviations, statistics reporting
+4. **Consistency** — construct names, abbreviations, tense throughout
+5. **Academic quality** — informal language, vague claims, missing hedges ("may suggest" vs "proves")
+6. **Argument flow** — does each paragraph connect logically to the next?
 
 ## Three-Phase Workflow
 
 ### Phase 1: Review & Propose (NO EDITS)
 
-Each agent:
-1. Reads the entire file
-2. Produces a **report** with every proposed change:
-   - Location (line number or slide title)
-   - Current text
+1. Read the entire document
+2. Produce a **report** with every proposed change:
+   - Location (section + paragraph, or line number if .md)
+   - Current text (exact quote)
    - Proposed fix
-   - Category (grammar / typo / overflow / consistency)
-3. Saves report to `quality_reports/` (e.g., `quality_reports/LectureN_Topic_report.md`)
-4. **Does NOT modify any source files**
+   - Category (grammar / typo / APA / consistency / clarity)
+3. Save report to `quality_reports/proofread_[filename].md`
+4. **Do NOT modify any source files**
 
-### Phase 2: Review & Approve
+### Phase 2: User Review
 
-The user reviews the proposed changes:
+User reviews proposed changes:
 - Accepts all, accepts selectively, or requests modifications
 - **Only after explicit approval** does the agent proceed
 
 ### Phase 3: Apply Fixes
 
 Apply only approved changes:
-- Use Edit tool; use `replace_all: true` for issues with multiple instances
-- Verify each edit succeeded
+- Use Edit tool with exact text matches
 - Report completion summary
+
+## APA Quick Reference
+
+- **Statistics:** *M* = 3.45, *SD* = 0.78, *r* = .45, *p* = .032, 95% CI [.21, .67]
+- **Numbers:** Spell out one through nine; use numerals for 10+
+  - Exception: always use numerals before units (3 items, 5 factors)
+- **Abbreviations:** Define on first use; use abbreviation consistently after
+- **Headings:** Level 1 = Centered Bold; Level 2 = Left-aligned Bold; Level 3 = Indented Bold Italic
+- **Citations:** (Author, Year) in text; do not use "et al." for first citation of ≤5 authors

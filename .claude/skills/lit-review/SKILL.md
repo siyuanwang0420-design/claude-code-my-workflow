@@ -26,8 +26,8 @@ Conduct a structured literature search and synthesis on the given topic.
 
 3. **Organize findings** into these categories:
    - **Theoretical contributions** — models, frameworks, mechanisms
-   - **Empirical findings** — key results, effect sizes, data sources
-   - **Methodological innovations** — new estimators, identification strategies, inference methods
+   - **Empirical findings** — key results, effect sizes, sample characteristics
+   - **Methodological approaches** — designs, measures, analytical methods
    - **Open debates** — unresolved disagreements in the literature
 
 4. **Identify gaps and opportunities:**
@@ -37,7 +37,7 @@ Conduct a structured literature search and synthesis on the given topic.
 
 5. **Extract citations** in BibTeX format for all papers discussed.
 
-6. **Save the report** to `quality_reports/lit_review_[sanitized_topic].md`
+6. **Save the report** to `quality_reports/lit_reviews/lit_review_[sanitized_topic].md`
 
 ---
 

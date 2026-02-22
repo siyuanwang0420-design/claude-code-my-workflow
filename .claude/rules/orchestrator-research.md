@@ -1,8 +1,8 @@
 ---
 paths:
-  - "scripts/**/*.R"
+  - "scripts/R/**"
+  - "scripts/Mplus/**"
   - "explorations/**"
-  - "Figures/**/*.R"
 ---
 
 # Research Project Orchestrator (Simplified)
