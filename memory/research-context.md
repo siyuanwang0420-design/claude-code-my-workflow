@@ -1,6 +1,6 @@
 # Research Context — Siyuan
 
-**Last Updated:** 2026-02-22 (session 2)
+**Last Updated:** 2026-02-23 (session 3)
 
 Persistent knowledge base across sessions. Update after each significant session.
 Claude reads this to restore context without you having to re-explain.
@@ -32,12 +32,16 @@ Claude reads this to restore context without you having to re-explain.
 ```
 Metamotivation (upstream: monitoring + knowledge)
     ↓ guides strategy selection (situation-specific fit)
-Motivational Regulation (strategies)
+Motivational Regulation (strategies — grounded in SRL/SDT)
     ↓ acts on
-EVT constructs (expectancy / value / cost)
-    ↓ predicts
-STEM Outcomes (motivation / achievement / persistence)
+EVT constructs (expectancy / value / cost)  ← EVT as mechanism framework,
+    ↓ predicts                                 NOT as strategy taxonomy
+STEM Outcomes (motivation / achievement / persistence / choices)
 ```
+
+**EVT positioning (Feb 23 corrected):** EVT is NOT the organizing framework for MR
+strategies (MR is grounded in SRL/SDT). EVT explains *what motivational states in STEM
+need regulating* — the mechanism layer between strategies and outcomes.
 
 ---
 
@@ -110,31 +114,53 @@ STEM Outcomes (motivation / achievement / persistence)
 ### COMPS Core Argument (one sentence)
 > "We know MR matters for academic outcomes, but we don't know how it works in STEM specifically, partly because the construct itself is theoretically contested and partly because the tools we use to measure it lack sufficient validity evidence—leaving the question of *who benefits from MR in STEM and through what mechanism* largely unanswered."
 
-### Research Questions
+### Research Questions (Feb 23 version)
 
-**RQ1 (Theory/Construct)**
-> How is motivational regulation conceptualized across theoretical frameworks, and what does existing evidence suggest about its correlates with motivation, achievement, and persistence in STEM contexts?
-- RQ1a: How is MR defined? Core disagreements across frameworks?
-- RQ1b: Do frameworks agree on *how* MR affects STEM outcomes?
-- RQ1c: What are the empirical correlates of MR with STEM motivation, achievement, and **persistence/choices**?
+**Question 1 (Theory)**
+> How is motivational regulation conceptualized across theoretical frameworks, and what do these frameworks predict about MR in STEM students' motivation, achievement, and academic choices?
+- RQ1a: How is MR defined? Where are the construct boundaries and core disagreements?
+- RQ1b: How do SRL, SDT, and metamotivation explain why/how MR operates in STEM?
+- RQ1c: What is the empirical evidence for MR → STEM motivation, achievement, persistence, and **educational choices** (course-taking, major intention, career aspiration)?
 
-**RQ2 (Methods/Measurement)**
-> How is motivational regulation measured in empirical research, and to what extent do studies provide evidence for the reliability and validity of these measures?
-- RQ2a: What instruments/paradigms are used?
-- RQ2b: Is reliability/validity reported? Is evidence sufficient for STEM use?
+**Question 2 (Methods)**
+> How is motivational regulation measured in STEM research, and what is the quality of validity evidence for existing measures?
+- RQ2a: What instruments/designs are used? (country, age group as descriptive dimensions)
+- RQ2b: How sufficient is the validity evidence? (evaluative framework, not just description)
 
-### Paper Structure (Feb 22 version)
+### Paper Structure (Feb 23 version — updated per LX COMPS + Feb6 templates)
+
+**Question 1 (Theory)**
+> How is motivational regulation conceptualized across theoretical frameworks, and what do these frameworks predict about MR in STEM students' motivation, achievement, and academic choices?
+
+| Sub-RQ | Content |
+|--------|---------|
+| RQ1a | What constructs define MR? Where are the theoretical boundaries and debates? |
+| RQ1b | How do SRL/SDT/metamotivation explain why/how MR operates in STEM? (metamotivation = answer to "what drives adaptive strategy selection") |
+| RQ1c | What is the empirical evidence for MR → STEM motivation, achievement, persistence/choices? (age/stage as descriptive dimension) |
+
+**Question 2 (Methods)**
+> How is motivational regulation measured in STEM research, and what is the quality of validity evidence?
+
+| Sub-RQ | Content |
+|--------|---------|
+| RQ2a | What instruments and designs are used? (country, age group distribution) |
+| RQ2b | How sufficient is the validity evidence? (evaluative, not just descriptive) |
+
+**Two-RQ connective logic:**
+> Construct confusion (RQ1a) → instruments from incompatible theoretical traditions (RQ2a) → insufficient validity evidence (RQ2b) → explains inconsistent correlate findings (RQ1c)
+
 ```
+Structure:
 1. Introduction — "Do we really know MR works in STEM?"
-   Anchor: Trautner (2025) N=289 map → science/math only ~20 studies
-2. Construct Analysis (RQ1a) — strategy-by-theory tracing matrix
-   Each MR strategy → its theoretical source → mechanism it targets
-   KEY GAP: Cost reduction strategy (EVT) has no formal name in MR literature
-3. Theory Analysis (RQ1b) — 4 frameworks × STEM predictions
-4. Empirical Correlates (RQ1c) — MR → STEM motivation/achievement/persistence
-   Fong (2024) meta as baseline; YOUR addition: persistence/choices DV
-5. Measurement Analysis (RQ2) — validity evidence audit
-6. Synthesis — EVT-Metamotivation integrated framework
+   Anchor: Trautner (2025) N=289 → science/math only ~20 studies
+2. Construct Analysis (RQ1a) — strategy-by-theory tracing; definitional debates
+3. Theory Analysis (RQ1b) — SRL/SDT/metamotivation × STEM predictions
+   Metamotivation: explains why same strategy works for some but not others
+   EVT: mechanism layer — what motivational states in STEM need regulation
+4. Empirical Correlates (RQ1c) — MR → motivation/achievement/pipeline choices
+   Key addition over Fong: course-taking, major intention, career aspiration as DVs
+5. Measurement Analysis (RQ2) — validity evidence audit with explicit framework
+6. Synthesis — integrated framework + research agenda
 ```
 
 ### What Distinguishes This from Fong (2024) Meta
@@ -157,13 +183,16 @@ STEM Outcomes (motivation / achievement / persistence)
 | 谁受益 | 平均效应 | Person-centered 视角 |
 | 方法 | EGM（文献地图） | 概念性综述 + 系统叙述综合 |
 
-**创新点总结（6条）：**
-1. STEM 语境专注——Trautner 证明空白存在，COMPS 填补
-2. EVT 作为理论组织框架——没有人用此系统梳理 MR 策略机制
-3. Cost regulation 空白——18 个策略无一正式针对 cost（EVT-derived gap）
-4. Persistence & choices 作为 DV——STEM pipeline 核心关切
-5. Measurement validity audit——STEM 可用测量工具的效度证据审查
-6. Metamotivation 整合——解释"为何同样策略对不同人效果不同"
+**创新点总结（3条，Feb 23 精炼版）：**
+
+| 创新点 | 内容 | 凭什么说别人没做 |
+|--------|------|----------------|
+| **1. STEM 理论特异性** | 分析 STEM 的动机需求（identity threat, cost结构）如何系统性改变 MR 机制预测——STEM 是理论变量，不只是情境标签 | Trautner 只做频率地图；STEM 被当情境标签而非理论变量 |
+| **2. 教育选择作为 DV** | course-taking, major intention, career aspiration 纳入 MR correlates；建立 MR 与 STEM pipeline 的理论连接 | Fong/Villar/Trautner 均无此 DV |
+| **3. 测量效度审查** | 用明确框架（Messick / AERA 标准）评估量表在 STEM 情境下的 construct validity——评价性，不只描述性 | Trautner 明确说自己未评估研究质量 |
+
+**Metamotivation 定位**：不作为独立创新点，而是在 RQ1b 内作为回答"什么驱动 MR 策略选择有效性"的理论机制（类比 LX COMPS 中 Tamir ER goals 框架的角色）。
+**Cost regulation 定位**：不作为独立创新点，而是**解释性论点**——cost gap 解释了为何 MR 在 STEM 中效果不稳定（放 Synthesis 部分）。
 
 ---
 
@@ -189,6 +218,7 @@ STEM Outcomes (motivation / achievement / persistence)
   - **Key stat to cite in intro:** 289 studies total, but science/math only ~20 → empirical justification for STEM gap
   - **What Trautner does NOT do:** no EVT framework, no metamotivation layer, no persistence/choices DV, no validity audit, no "who benefits"
   - **Rhetorical role:** Trautner is your launching pad, not your competitor. It proves the gap; you fill it.
+  - **Key Trautner limitations to cite:** (1) excluded motivational monitoring literature, (2) did not assess study quality (= your RQ2 justification), (3) only bivariate relations, no mechanism analysis
 
 **Supporting (read method sections):**
 - Kim, Beymer et al. (2026) — intensive longitudinal, calculus

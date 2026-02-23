@@ -734,9 +734,111 @@ EVT 被引用（Eccles & Wigfield 2002），但六个组件里没有任何策略
 
 ---
 
+---
+
+## 二十二、Trautner et al. (2025) — 精读总结（Feb 23）
+
+**Trautner, Grunschel & Schwinger (2025). Motivating Motivation Regulation Research — An Evidence and Gap Map Approach. *Educational Psychology Review*, 37:44.**
+
+### 今天精读的三块核心内容
+
+**1. 定义的分歧（RQ1）**
+- 289篇研究中 construct 界定混乱
+- 多数研究将 MR 理解为策略**执行**，忽视监控（monitoring）过程
+- 主要聚焦动机的量的提升，忽视质的转变（regulation of motivation type, not just amount）
+- 大多数研究将 MR 嵌套在 SRL 框架下，MR 作为独立构念的理论地位不足
+
+**2. 研究设计与测量现状（Evidence and Gap Map）**
+- 75% 为横断面研究；纵向研究少且质量参差；无跨长时段或关键过渡期追踪
+- 实验研究极少
+- 80% 依赖自我报告问卷，量表种类繁多、标准化程度低，跨研究可比性差
+
+**3. 明确的局限性（Trautner 自述）**
+- 语言仅限英语和德语
+- **排除了专门研究动机监控的文献**（= 元动机监控文献未纳入）
+- 只考察直接双变量关系，未能捕捉复杂交互
+- **未评估研究质量**（= 效度审查空白，你的 RQ2 直接填补）
+
+### COMPS 的直接用法
+- Trautner 的局限3（未评估质量）= 你 RQ2 的直接依据
+- Trautner 的局限2（排除监控文献）= 你引入元动机框架的理由
+- STEM ~20篇 = 统计依据，放 Introduction
+
+---
+
+## 二十三、创新点重构与 COMPS 框架更新（Feb 23）
+
+### 自我批评记录（重要：修正了 Feb 22 的几处不精准）
+
+| 旧论点 | 问题所在 | 修正方向 |
+|--------|---------|---------|
+| "EVT 作为 MR 策略的组织框架" | MR 理论根基是 SRL/SDT，不是 EVT；强行说 EVT 是策略框架，委员会会挑战 | EVT 重新定位为**机制框架**（解释 STEM 中什么动机状态需要调节），不是策略来源框架 |
+| "Cost regulation 是创新点" | 指出没有 cost 策略是一个观察/gap，不是独立贡献 | 降格为**解释性论点**：cost gap 解释了为何 MR 在 STEM 中效果不稳定 |
+| "只关注 formal settings" | 没有理论依据排除在线/虚拟情境；进一步压缩本已稀少的 STEM 文献 | 替换为**年龄/阶段作为调节变量**，描述不同发展阶段的研究分布 |
+| "Metamotivation 是创新点之一" | 文献太少，难以单独成为研究问题 | 定位为 RQ1b 里**解释策略选择有效性的理论机制**（类比 LX COMPS 中 Tamir 的 ER goals 框架） |
+
+### EVT 的正确定位（Feb 23 更新）
+
+```
+❌ 错误：EVT 作为 MR 策略的组织框架
+✅ 正确：EVT 作为理解"STEM 中什么动机状态需要调节"的机制框架
+
+逻辑链：
+STEM 学生面临 expectancy 下降 / value 缺失 / cost 感知过高（EVT 解释为什么 STEM 难以持续）
+    → MR 策略（来自 SRL/SDT）作用于这些状态
+    → 影响 STEM pipeline 结果（course-taking, major choice, career aspiration）
+```
+
+### 参照模板：LX COMPS + Feb6 的结构启示
+
+**LX 的 COMPS（情绪调节）**：
+- Q1 理论："什么驱动了情绪调节？"——综述理论框架，不把 Tamir 的 ER goals 变成独立 RQ
+- Q2 方法："用什么方法测量？"——scoping review 方法论
+
+**Feb6（Science Affect）**：
+- RQ1：有哪些 constructs？
+- RQ2：理论怎么被使用？
+- RQ3：怎么研究的？
+
+**核心启示**：Metamotivation 类比 Tamir 的 ER goals——它是回答"什么驱动 MR 策略选择"的理论答案，而非独立 RQ。
+
+### 精炼后的三个创新点（Feb 23 版本）
+
+| 创新点 | 具体内容 | 凭什么说别人没做 |
+|--------|---------|----------------|
+| **1. STEM 理论特异性** | 分析 STEM 的动机需求（identity threat, cost结构）如何系统性改变 MR 机制预测——不只是"STEM 是情境标签" | Trautner 只做频率地图，无机制分析；STEM 被当情境标签而非理论变量 |
+| **2. 教育选择作为 DV** | 把 course-taking, major intention, career aspiration 纳入 MR correlates，建立 MR 与 STEM pipeline 的理论连接 | Fong/Villar/Trautner 均无此 DV |
+| **3. 测量效度审查** | 评估量表在 STEM 情境下的 construct validity 证据，用明确框架打分（如 Messick / AERA 标准）——不只是描述"有哪些量表" | Trautner 明确说自己未评估研究质量 |
+
+**Metamotivation 在新框架中的位置**：在 RQ1b 内作为解释"为什么相同策略对不同学生效果不同"的理论机制。
+
+### 重构后的 COMPS RQ 框架（Feb 23 版本）
+
+**Question 1（理论）**
+> How is motivational regulation conceptualized across theoretical frameworks, and what do these frameworks predict about MR in STEM students' motivation, achievement, and academic choices?
+
+| 子问题 | 内容 |
+|--------|------|
+| RQ1a | MR 有哪些 constructs？定义和边界分歧在哪？ |
+| RQ1b | 各框架（SRL/SDT/metamotivation）如何解释 MR 在 STEM 中的作用机制？ |
+| RQ1c | MR 与 STEM motivation, achievement, persistence/choices 的实证关联是什么？（含 age/stage 分布） |
+
+**Question 2（方法）**
+> How is motivational regulation measured in STEM research, and what is the quality of validity evidence for existing measures?
+
+| 子问题 | 内容 |
+|--------|------|
+| RQ2a | 用了哪些工具和设计？（含 age group、country 分布） |
+| RQ2b | 信效度证据的充分程度如何？（评价性，不只描述性） |
+
+**两个 RQ 的连接逻辑**：
+> MR construct 定义不统一（RQ1a）→ 研究者使用了不同理论框架的不同量表（RQ2a）→ 这些量表的信效度证据不足（RQ2b）→ 导致 correlates 发现不一致（RQ1c 的 inconsistency 有了解释）
+
+---
+
 *Notes generated: February 20, 2026*
-*Updated: February 22, 2026*
-*新增内容：§二（16篇元动机文献 + knowledge/beliefs 辨析）、§三（脉络更新）、§四（Gap 2/5 更新）、§七（RQ 结构重构）、§十四（COMPS 选题 + 实证方向）、§十五（阅读优先级）、§十七（Role B 实证支撑）、§十八（Trautner 定位分析）、§十九（Construct Clarity 方法论）、§二十（Li & Zheng 分析）、§二十一（Rosenzweig 简注）*
+*Updated: February 23, 2026*
+*新增内容：§二（16篇元动机文献 + knowledge/beliefs 辨析）、§三（脉络更新）、§四（Gap 2/5 更新）、§七（RQ 结构重构）、§十四（COMPS 选题 + 实证方向）、§十五（阅读优先级）、§十七（Role B 实证支撑）、§十八（Trautner 定位分析）、§十九（Construct Clarity 方法论）、§二十（Li & Zheng 分析）、§二十一（Rosenzweig 简注）、§二十二（Trautner精读总结）、§二十三（创新点重构 + COMPS框架更新）*
 
 *Next steps:*
 *1. 精读六篇核心文献（Wolters 2003 / Miele et al. 2024 / Fong 2024 / Villar 2024 / von der Mülbe 2026 / Teo et al. 2025）*
